@@ -1,9 +1,9 @@
 <?php get_header();?>
-	<section class="grid-nopadding default-content">	
-		<div class="row">
-			<div class="col-1">
+	<section class="default-content">	
+		<div class="flex-row flex-wrap">
+			<div class="flex flex-1">
 				<h2>404</h2>
-Á			<div class="col-1">
+			<div class="flex flex-1">
 				<p>Error</p>
 			</div>
 		</div>

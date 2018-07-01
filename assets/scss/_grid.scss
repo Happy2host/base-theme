@@ -7,152 +7,90 @@ section {
   text-align: left;
   width: 100%;
 }
- 
-.grid {
-  height: auto;
-  overflow: hidden;
-  text-align: center;
-  width: 100%;
-  &.show-overflow {
-    overflow: visible;
-    white-space: normal;
-  }
+
+.flex-row{
+	display:flex;
+	flex-direction: row;
+	&.padded {
+		padding-left:$body-padding;
+	}
+	&.inline {
+		display:inline-flex;
+	}
+	&.flex-wrap{
+		flex-wrap:wrap;
+	}
+	&.flex-nowrap{
+		flex-wrap:nowrap;
+	}
+	.flex {
+		flex:1;
+		&.grow {
+			flex-grow:1;
+		}
+		&.nogrow {
+			flex-grow:0;
+		}
+		&.shrink {
+			flex-shrink:1;
+		}
+		&.noshrink {
+			flex-shrink:0;
+    }
+
+    //RESPONSIVE ELEMENTS
+		&.flex-1{
+			flex-basis:100%;
+		}
+		&.flex-1-2{
+			flex-basis:50%;
+		}
+		&.flex-1-3{
+			flex-basis:33.3%;
+		}
+		&.flex-1-4{
+			flex-basis:25%
+		}
+		&.flex-2-3{
+			flex-basis:66.6%;
+		}		
+		&.flex-3-4{
+			flex-basis:75%;
+		}	
+	}	
 }
 
-.row { 
-  display: inline-block;
-  margin: 0 auto;
-  max-width: $main-width;
-  padding-left: $body-padding;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  white-space: nowrap;
-  &.nopadding { 
-   padding: 0;
-  }
-  &.wide { 
-   max-width: none;
-  } 
-  &.show-overflow {
-    overflow: visible;
-    white-space: normal;
-  } 
-  @media screen and (max-width: 768px){
-    &.show-overflow-tab {
-      overflow: visible;
-      white-space: normal;
-    }     
-  }
-  p { 
-    white-space: normal;
-  }  
+.flex {
+	.flex-row.padded &  {
+		padding-right:$body-padding;
+	}	
 }
 
-div[class^="col-"]{
-  display: inline-block;
-  padding-right: $body-padding;
-  position: relative;
-  white-space: normal;
-  vertical-align: top;
-  &.nopadding { 
-   padding: 0;
-  }
+//BREAKPOINTS
+.flex-row {
+	.flex {
+		@media screen and (max-width:768px){
+			&.\@tab-brk__1-2 {
+				flex-basis:50%;
+			}
+			&.\@tab-brk__1-3 {
+				flex-basis:33.3%;
+			}	
+			&.\@tab-brk__1{
+				flex-basis:100%;
+			}
+		}	
+		@media screen and (max-width:450px){
+			&.\@mob-brk__1-2 {
+				flex-basis:50%
+			}
+			&.\@mob-brk__1-3 {
+				flex-basis:33.3%
+			}
+			&.\@mob-brk__1 {
+				flex-basis:100%;
+			} 
+		} 
+	}
 }
 
-.col-1 { 
-  width:100%;
-}
-
-.col-1-2 {
-  width:50%;
-}
-
-.col-1-3 { 
-  width:33.3%;
-}
-
-.col-1-4 { 
-  width:25%;
-}
-
-.col-1-5 { 
-  width:20%;
-}
-
-.col-1-7 { 
-  width:14.28%;
-}
-
-.col-1-8 {
-  width:12.5%;
-}
-
-.col-1-9 {
-  width:11.1%;
-}
-
-.col-1-16 {
-  width:6.25%;
-}
-
-.col-2-3 { 
-  width:66.6%;
-}
-
-.col-2-5 { 
-  width:40%;
-}
-
-.col-3-5 { 
-  width:60%;
-}
-
-.col-4-5 { 
-  width:80%;
-}
-
-//Responsive elements
-
-@media screen and (max-width: 768px){
-  .\@tab__brk-1 { 
-    width: 100%;
-  }
-  .\@tab__brk-1-2 { 
-    width: 50%;
-  }  
-  .\@tab__brk-1-3 { 
-    width: 33.3%;
-  }
-  .\@tab__brk-2-3 { 
-    width: 66.6%;
-  }
-  .\@tab__brk-1-4 { 
-    width: 25%;
-  }
-  .\@tab__brk-1-5 { 
-    width: 20%;
-  }    
-}
-
-@media screen and (max-width: 450px){
-  /* Use '\' to escape the @ symbol */
-  .\@mob__brk-1 { 
-    width: 100%;
-  }
-  .\@mob__brk-1-2 { 
-    width: 50%;
-  }
-  .\@mob__brk-1-3 { 
-    width: 33.3%;
-  } 
-  .\@mob__brk-2-3 { 
-    width: 66.6%;
-  }    
-  .\@mob__brk-1-4 { 
-    width: 25%;
-  }
-  .\@mob__brk-1-5 { 
-    width: 20%;
-  }
-}

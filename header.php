@@ -31,9 +31,9 @@
 <body <?php body_class(); ?>>
 
 	<header>	
-		<section class="grid wide">
-			<div class="row alignleft">
-				<div class="col-1">
+		<section>
+			<div class="flex-row flex-wrap padded">
+				<div class="flex flex-1">
 					<a class="logo" accesskey="h" href="<?php bloginfo('siteurl');?>">
 						<img src="<?php bloginfo('template_url');?>/images/logo.png" alt="<?php bloginfo('sitename');?>">
 					</a>
