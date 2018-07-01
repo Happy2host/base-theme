@@ -1,0 +1,1 @@
+<?php comments_number( 'No comments', '1 comment', '% comments' ); ?>

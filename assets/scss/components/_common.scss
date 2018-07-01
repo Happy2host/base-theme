@@ -1,0 +1,216 @@
+//Imports
+@import "_c-variables";
+
+a { 
+	@include transition(all $anim-speed ease);
+	color: #fff;
+	@media screen and (min-width:769px){
+		&:hover {
+			opacity:.5;
+		}
+	} 
+}
+
+h1 { 
+	font-size: $h1-title-size;
+	color:$default-title-color;
+	margin:0 0 30px;
+	font-weight: bold;
+	.page-title {  
+		text-align: center;
+	}
+}
+
+h2  {
+	font-size: $h2-title-size;
+	font-weight: $default-font-weight;
+	margin: 0 0 60px;
+	text-align: center;
+	width: 100%;
+}
+
+h3, h4, h5, h6 { 
+	font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, p {
+	&.nowrap {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+}
+
+p { 
+	font-size: $default-font-size;
+	color: $default-text-color; 
+	margin:0 0 15px;
+}
+
+//Hide Me Show Me
+.hideme { 
+	@include transition(all 300ms);
+	opacity: 0;
+	visitibility: hidden;
+	&.showme { 
+		opacity: 1;
+		visibitlity: visible;
+	}
+}
+
+//Carousel
+.carousel {
+	@include transition(all $anim-speed ease); 
+	height: 100vh;
+	opacity:1;
+	overflow:hidden;
+	position:relative;
+	width: 100%;
+	&.loading {
+		opacity:0;
+	}	
+	.flex-viewport {
+		height:100%;
+	}	
+	ul.slides {
+		height: 100%;
+		margin:0;
+		padding: 0;
+		width: 100%;
+		li {
+			height:100%;
+			width:100%;
+		}
+	}
+}
+
+//Flex
+.flex-this {
+	@include display-flex;
+	align-items:center;	
+	flex-wrap:wrap;
+	.flex {
+		flex:1;
+	}
+}
+
+//SVG
+svg {
+	height:auto !important;
+	width:auto !important;
+}
+
+//Common attributes
+.center-float {
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	margin:auto;
+}
+.last { 
+	margin-right:0;
+	padding-right:0;
+}
+
+.alignleft { 
+	text-align: left;
+}
+
+.aligncenter { 
+	text-align: center;
+}
+
+.alignright { 
+	text-align: right;
+}
+
+//Margins
+.m-t-1 {
+	margin-top: $body-padding;	
+}
+.m-t-2 {
+	margin-top: $body-padding * 2;	
+}
+.m-t-3 {
+	margin-top: $body-padding * 3;	
+}
+.m-b-1 {
+	margin-bottom: $body-padding;	
+}
+.m-b-2 {
+	margin-bottom: $body-padding * 2;	
+}
+.m-b-3 {
+	margin-bottom: $body-padding * 3;	
+}
+.p-t-1 {
+	padding-top: $body-padding;
+}
+.p-t-2 {
+	padding-top: $body-padding * 2;
+}
+.p-t-3 {
+	padding-top: $body-padding * 3;
+}
+.p-b-1 {
+	padding-bottom: $body-padding;
+}
+.p-b-2 {
+	padding-bottom: $body-padding * 2;
+}
+
+.p-b-3 {
+	padding-bottom: $body-padding * 3;
+}
+
+// ul.slides > li {
+// 	display: none; 
+// 	-webkit-backface-visibility: hidden;
+// } 
+
+.flex-direction-nav { 
+	height: 40px;
+	width: 100%;
+	padding: 0;
+	position: absolute;
+	top: 400px;
+	z-index: 100;
+	li { 
+		height:40px;
+		float: left;
+		position:relative;
+		text-align: center;
+		width:50%;
+		.flex-prev, 
+		.flex-next {
+			@include transition(all  500ms);
+			display: inline-block;
+			font-size: $h2-title-size;
+			position:relative;
+			top:50%;
+			transform:translateY(-50%);
+			&.flex-disabled { 
+				opacity: .2;
+			}
+		}
+		.flex-prev:before { 
+			color: $grey__darker;
+			content:"\E314"; // Use codes starting with \'backslash' XXXX'
+			font-family: $icon-font, $icon-font-mi;
+		}
+		.flex-next {
+			&:before { 
+				color: $grey__darker;
+				content:"\E315";
+				font-family: $icon-font, $icon-font-mi;
+			}
+		}
+	}
+}
+
+//TopNav Highlight
+.current_page_item a, body.home .home-item a{ 
+	color: #333 !important;
+}

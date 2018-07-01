@@ -1,0 +1,16 @@
+@import "_c-variables";
+
+footer { 
+	bottom:0;
+	padding: $body-padding * 2 $body-padding;
+	position:absolute;
+	width:100%;
+	.flex{ 
+		color: #fff;
+		font-size: 14px;
+		text-align:left;
+		&.author { 
+			text-align:right;
+		}
+	}	
+}

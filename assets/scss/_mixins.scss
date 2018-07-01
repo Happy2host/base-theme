@@ -1,0 +1,111 @@
+/*This is called in base*/
+@mixin appearance-none {
+	appearance:none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-o-appearance:none;
+	-ms-appearance:none;
+}
+
+@mixin display-flex {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: flex;
+}
+//Usage: @include display-flex;
+
+@mixin flex($flex) {
+	-webkit-flex: $flex;
+	-moz-flex: $flex;
+	-o-flex: $flex;
+	-ms-flex: $flex;
+	flex: $flex;
+}
+
+
+@mixin appearance-none {
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+@mixin hide-me {
+	opacity: 0;
+	visibility: hidden;
+}
+
+@mixin show-me {
+	opacity: 1;
+	visibility: visible;
+}
+
+@mixin blurrit($blur) {
+	-webkit-filter: $blur;
+	-moz-filter: $blur;
+	-o-filter: $blur;
+	-ms-filter: $blur;
+	filter: $blur;
+}
+
+@mixin transition($attr) {
+	-webkit-transition: $attr;
+	-moz-transition:$attr;
+	-o-transition: $attr;
+	-ms-transition: $attr;
+	transition: $attr;
+}
+
+@mixin border-radius($radius){
+	-webkit-border-radius:$radius;
+	-moz-border-radius:$radius;
+	-o-border-radius:$radius;
+	-ms-border-radius:$radius;
+	border-radius:$radius;
+}
+
+@mixin border-TL($radius){
+	-webkit-border-top-left-radius:$radius;
+	-moz-border-top-left-radius:$radius;
+	-o-border-top-left-radius:$radius;
+	-ms-border-top-left-radius:$radius;
+	border-top-left-radius:$radius;
+}
+
+@mixin border-BL($radius){
+	-webkit-border-bottom-left-radius:$radius;
+	-moz-border-bottom-left-radius:$radius;
+	-o-border-bottom-left-radius:$radius;
+	-ms-border-bottom-left-radius:$radius;
+	border-bottom-left-radius:$radius;
+}
+
+@mixin border-BR($radius){
+	-webkit-border-bottom-right-radius:$radius;
+	-moz-border-bottom-right-radius:$radius;
+	-o-border-bottom-right-radius:$radius;
+	-ms-border-bottom-right-radius:$radius;
+	border-bottom-right-radius:$radius;
+}
+
+@mixin border-TR($radius){
+	-webkit-border-top-right-radius:$radius;
+	-moz-border-top-right-radius:$radius;
+	-o-border-top-right-radius:$radius;
+	-ms-border-top-right-radius:$radius;
+	border-top-right-radius:$radius;
+}
+
+@mixin greyscale($amount){
+    -webkit-filter: grayscale($amount);
+       -moz-filter: grayscale($amount);
+         -o-filter: grayscale($amount);
+        -ms-filter: grayscale($amount);
+            filter: grayscale($amount); 
+}
+
+@mixin rotate($amount){
+    -ms-transform: rotate($amount);
+    -webkit-transform: rotate($amount); 
+     transform: rotate($amount);	
+}

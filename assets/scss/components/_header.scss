@@ -1,0 +1,9 @@
+@import "_c-variables";
+
+header  {
+	position: relative;
+	width:100%;
+	nav{
+		padding-right: $body-padding;
+	}
+}

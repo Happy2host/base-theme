@@ -1,0 +1,1 @@
+<?php $postType = get_post_type_object(get_post_type()); if ($postType) {echo esc_html($postType->labels->singular_name);}?>
