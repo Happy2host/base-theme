@@ -12,13 +12,5 @@
 			</section>
 		</footer>
 	<?php wp_footer(); ?>
-
- <script type="text/javascript" src="<?php bloginfo('template_url');?>/assets/js/jquery.js"/></script>
-<script type="text/javascript" src="<?php bloginfo('template_url');?>/assets/js/jquery.flexslider.js"/></script>
-<script type="text/javascript" src="<?php bloginfo('template_url');?>/assets/js/custom.js"/></script>
-<script type="text/javascript" src="<?php bloginfo('template_url');?>/assets/js/easing.js"/></script>
-<script type="text/javascript" src="<?php bloginfo('template_url');?>/assets/js/waypoints.min.js"/></script>
-<script type="text/javascript" src="<?php bloginfo('template_url');?>/assets/js/fontawesome-all.js"/></script>
-
 	</body>
 </html>
