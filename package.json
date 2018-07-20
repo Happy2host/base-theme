@@ -7,5 +7,8 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-watch-change": "^0.1.1"
+  },
+  "dependencies": {
+    "hamburgers": "^0.9.3"
   }
 }
