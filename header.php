@@ -38,8 +38,11 @@
 						<img src="<?php bloginfo('template_url');?>/images/logo.png" alt="<?php bloginfo('sitename');?>">
 					</a>
 					<div class="menu-btn">
-						<i class="material-icons">menu</i>
-						<div></div>
+						<button class="hamburger hamburger--here" type="button">
+						  <span class="hamburger-box">
+						    <span class="hamburger-inner"></span>
+						  </span>
+						</button>
 					</div>	
 					<nav>
 						<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>

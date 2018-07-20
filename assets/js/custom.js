@@ -29,6 +29,13 @@ $(document).ready(function() {
     });
 });
 
+//Menu btn
+$(document).ready(function(){
+    $('.menu-btn').on('click',function(){
+        $('.menu-btn button').toggleClass('is-active');
+    })
+})
+
 //Full browser height
 $(document).ready(sizeContent);
 function sizeContent() {
