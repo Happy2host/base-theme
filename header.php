@@ -38,6 +38,7 @@
 						<img src="<?php bloginfo('template_url');?>/images/logo.png" alt="<?php bloginfo('sitename');?>">
 					</a>
 					<div class="menu-btn">
+						<!-- https://jonsuh.com/hamburgers/ -->
 						<button class="hamburger hamburger--here" type="button">
 						  <span class="hamburger-box">
 						    <span class="hamburger-inner"></span>

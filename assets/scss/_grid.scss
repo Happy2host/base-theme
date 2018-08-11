@@ -12,6 +12,7 @@ section {
 	align-items:flex-start;
 	display:flex;
 	flex-direction: row;
+	margin:0 auto;
 	&.padded {
 		padding-left:$body-padding;
 	}
@@ -42,11 +43,13 @@ section {
 	&.align-items-c {
 		align-items:center;
 	}
+	&.max-width{
+		max-width:1140px;
+	}
 	.flex {
 		flex:1;
-		&.grow {
-			flex-grow:1;
-		}
+		flex-grow:1;
+		position:relative;
 		&.nogrow {
 			flex-grow:0;
 		}
@@ -55,9 +58,9 @@ section {
 		}
 		&.noshrink {
 			flex-shrink:0;
-    }
+    	}
 
-    //RESPONSIVE ELEMENTS
+   		//RESPONSIVE ELEMENTS
 		&.flex-1{
 			flex-basis:100%;
 		}

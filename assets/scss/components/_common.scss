@@ -1,6 +1,3 @@
-//Imports
-@import "_c-variables";
-
 a { 
 	@include transition(all $anim-speed ease);
 	color: #fff;
@@ -51,10 +48,10 @@ p {
 .hideme { 
 	@include transition(all 300ms);
 	opacity: 0;
-	visitibility: hidden;
+	visibility: hidden;
 	&.showme { 
 		opacity: 1;
-		visibitlity: visible;
+		visibility: visible;
 	}
 }
 
@@ -113,17 +110,20 @@ svg {
 	margin-right:0;
 	padding-right:0;
 }
-
 .alignleft { 
 	text-align: left;
 }
-
 .aligncenter { 
 	text-align: center;
 }
-
 .alignright { 
 	text-align: right;
+}
+.divider {
+	background:#fff;
+	height:2px;
+	margin:$body-padding 0;
+	width:100%;
 }
 
 //Margins

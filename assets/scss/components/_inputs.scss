@@ -1,0 +1,24 @@
+input[type=checkbox] {
+    appearance:none;
+    -webkit-appearance:none;
+    background:#fff;
+    height:30px;
+    flex:1;
+    flex-basis:30px;
+    flex-grow:0;
+    margin-right:$body-padding;
+    position:relative;
+    top:-3px;
+    width:30px;
+    &:checked {
+        &:before {
+            color:$grey__darker;
+            content:'\E876';
+            font-family: $icon-font-mi;
+            font-size:18px;
+            left:5px;
+            position:absolute;
+            top:6px;
+        }
+    }
+}
