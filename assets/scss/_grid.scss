@@ -1,118 +1,132 @@
 main { 
-  width:100%;
-}
-
-section { 
-  margin: 0 auto;
-  text-align: left;
-  width: 100%;
-}
-
-.flex-row{
-	align-items:flex-start;
-	display:flex;
-	flex-direction: row;
-	margin:0 auto;
-	&.padded {
-		padding-left:$body-padding;
-	}
-	&.inline {
-		display:inline-flex;
-	}
-	&.flex-wrap{
-		flex-wrap:wrap;
-	}
-	&.flex-nowrap{
-		flex-wrap:nowrap;
-	}
-	&.justify-fs {
-		justify-content:flex-start;
-	}
-	&.justify-fe {
-		justify-content:flex-start;
-	}
-	&.justify-c {
-		justify-content: center;
-	}
-	&.align-items-fs {
-		align-items:flex-start;
-	}
-	&.align-items-fe {
-		align-items:flex-end;
-	}
-	&.align-items-c {
-		align-items:center;
-	}
-	&.max-width{
-		max-width:1140px;
-	}
-	.flex {
-		flex:1;
-		flex-grow:1;
-		position:relative;
-		&.nogrow {
-			flex-grow:0;
-		}
-		&.shrink {
-			flex-shrink:1;
-		}
-		&.noshrink {
-			flex-shrink:0;
-    	}
-
-   		//RESPONSIVE ELEMENTS
-		&.flex-1{
-			flex-basis:100%;
-		}
-		&.flex-1-2{
-			flex-basis:50%;
-		}
-		&.flex-1-3{
-			flex-basis:33.3%;
-		}
-		&.flex-1-4{
-			flex-basis:25%
-		}
-		&.flex-2-3{
-			flex-basis:66.6%;
-		}		
-		&.flex-3-4{
-			flex-basis:75%;
-		}	
-	}	
-}
-
-.flex {
-	.flex-row.padded &  {
-		padding-right:$body-padding;
-	}	
-}
-
-//BREAKPOINTS
-.flex-row {
-	.flex {
-		@media screen and (max-width:768px){
-			&.\@tab-brk__1-2 {
-				flex-basis:50%;
-			}
-			&.\@tab-brk__1-3 {
-				flex-basis:33.3%;
-			}	
-			&.\@tab-brk__1{
-				flex-basis:100%;
-			}
-		}	
-		@media screen and (max-width:450px){
-			&.\@mob-brk__1-2 {
-				flex-basis:50%
-			}
-			&.\@mob-brk__1-3 {
-				flex-basis:33.3%
-			}
-			&.\@mob-brk__1 {
-				flex-basis:100%;
-			} 
-		} 
-	}
-}
-
+	width:100%;
+  }
+  
+  section { 
+	margin: 0 auto;
+	text-align: left;
+	width: 100%;
+  }
+  
+  .flex-row,
+  .flex-col{
+	  align-items:flex-start;
+	  display:flex;
+	  flex-direction: row;
+	  margin: 0 auto;
+	  max-width:$main-width;
+	  &.padded {
+		  padding-left:$body-padding;
+	  }
+	  &.inline {
+		  display:inline-flex;
+	  }
+	  &.wide{
+		  max-width: none;
+		  width:100%;
+	  }
+	  &.fullheight {
+		  height:100vh;
+	  }	
+	  .flex { 
+		  flex:1;
+		  position:relative;
+		  &.max-width{
+			  display: flex;
+			  flex-direction:row;
+			  margin:0 auto;
+			  max-width:1180px;
+			  padding-right:0 !important;
+		  }
+		  &.nogrow {
+			  flex-grow:0;
+		  }
+		  &.shrink {
+			  flex-shrink:1;
+		  }
+		  &.noshrink {
+			  flex-shrink:0;
+		  }	
+		  //RESPONSIVE ELEMENTS
+		  &.flex-1{
+			  flex-basis:100%;
+		  }
+		  &.flex-1-2{
+			  flex-basis:50%;
+		  }
+		  &.flex-1-3{
+			  flex-basis:33.3%;
+		  }
+		  &.flex-1-4{
+			  flex-basis:25%
+		  }
+		  &.flex-2-3{
+			  flex-basis:66.6%;
+		  }		
+		  &.flex-3-4{
+			  flex-basis:75%;
+		  } 
+	  }	
+  }
+  
+  .flex-wrap{
+	  flex-wrap:wrap;
+  }
+  .flex-nowrap{
+	  flex-wrap:nowrap;
+  }
+  .justify-flex-start {
+	  justify-content:flex-start;
+  }
+  .justify-center {
+	  justify-content: center;
+  }
+  .justify-space-around {
+	  justify-content: space-around;
+  }
+  .justify-space-between {
+	  justify-content: space-between;
+  }
+  
+  .flex-col {
+	  flex-direction: column;
+  }
+  .flex {
+	  .flex-row.padded &  {
+		  padding-right:$body-padding;
+	  }	
+	  .flex-row.fullheight & {
+		  height:100vh;
+	  }	
+  }
+  
+  //BREAKPOINTS
+  .flex-row,
+  .flex-col {
+	  .flex {
+		  @media screen and (max-width:768px){
+			  &.\@tab__brk-1-2 {
+				  flex-basis:50%;
+			  }
+			  &.\@tab__brk-1-3 {
+				  flex-basis:33.3%;
+			  }	
+			  &.\@tab__brk-1{
+				  flex-basis:100%;
+			  }
+		  }	
+		  @media screen and (max-width:450px){
+			  &.\@mob__brk-1-2 {
+				  flex-basis:50%
+			  }
+			  &.\@mob__brk-1-3 {
+				  flex-basis:33.3%
+			  }
+			  &.\@mob__brk-1 {
+				  flex-basis:100%;
+			  } 
+		  } 
+	  }
+  }
+  
+  
