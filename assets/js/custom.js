@@ -55,14 +55,42 @@ $(document).ready(function(){
 	$(window).bind('scroll',function(e){
    		parallaxScroll();
    	});
- 
    	function parallaxScroll(){
    		var scrolledY = $(window).scrollTop();
 		$('.large-window').css('background-position','center -'+((scrolledY*0.3))+'px');   	
-
 	}
- 
 });
+
+//Parallax Content
+$.fn.moveIt = function(){
+    var $window = $(window);
+    var instances = [];
+    
+    $(this).each(function(){
+      instances.push(new moveItItem($(this)));
+    });
+    
+    window.onscroll = function(){
+      var scrollTop = $window.scrollTop();
+      instances.forEach(function(inst){
+        inst.update(scrollTop);
+      });
+    }
+  }
+  
+  var moveItItem = function(el){
+    this.el = $(el);
+    this.speed = parseInt(this.el.attr('data-scroll-speed'));
+  };
+  
+  moveItItem.prototype.update = function(scrollTop){
+    this.el.css('transform', 'translateY(' + -(scrollTop / this.speed) + 'px)');
+  };
+  
+  // ---- Initialization
+  $(function(){
+    $('[data-scroll-speed]').moveIt();
+  });
 
 //Page switch delay
 $(document).ready(function(){
@@ -148,3 +176,33 @@ function hasScrolled() {
     
     lastScrollTop = st;
 }
+
+//Anchor for animated header
+$(document).ready(function() {
+    var newHeight = $("html").height();
+    var s = $("header");
+    var pos = s.position();                    
+    $(window).scroll(function() {
+        var windowpos = $(window).scrollTop();
+        var projectpos = $('.project-form').scrollTop();
+//         s.html("Distance from top:" + pos.top + "<br />Scroll position: " + windowpos);
+        if (windowpos >= 50 || projectpos >= 50) {
+            s.addClass("reduce");
+            setTimeout(function(){
+              $('nav').addClass('hide');
+              $('nav .btn').addClass('hide');
+              $('.floating-btn').addClass('active');
+            }, 500);
+            //$('.return-to-single').fadeIn(500);
+        } else if (windowpos < 180 || projectpos >= 50){
+            s.removeClass("reduce");        
+            setTimeout(function(){
+             $('nav .btn').removeClass('hide');
+             $('nav').removeClass('hide');
+             $('.floating-btn').removeClass('active');
+             $('.filter-panel').removeClass('active');
+           }, 500);
+            //$('.return-to-single').fadeOut(500);
+        }
+    });
+});

@@ -3,7 +3,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-reload');
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -13,12 +12,6 @@ module.exports = function(grunt) {
 	      		files: ['assets/scss/*/*.scss','assets/scss/*.scss','*.php','/*/*.php'],
 	      		tasks: ['sass','cssmin']
 	      	},
-	    },
-	    reload: {
-	        port: 8888,
-	        proxy: {
-	            host: 'localhost'
-	        }
 	    },
 		sass: {
 			dist: {

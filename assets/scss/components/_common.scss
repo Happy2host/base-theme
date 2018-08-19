@@ -120,10 +120,13 @@ svg {
 	text-align: right;
 }
 .divider {
-	background:#fff;
+	background:$grey;
 	height:2px;
 	margin:$body-padding 0;
 	width:100%;
+	&.light {
+		background:#fff;
+	}
 }
 
 //Margins

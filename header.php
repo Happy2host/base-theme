@@ -46,7 +46,12 @@
 						</button>
 					</div>	
 					<nav>
-						<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+						<?php wp_nav_menu( array( 
+							'theme_location' => 'main-menu',
+							'before' => '',
+							'after' => ''
+							) ); 
+						?>
 					</nav>	
 				</div>
 			</div>
