@@ -1,6 +1,7 @@
-//Flex it
 $(window).load(function() {
-  $('.class-name').flexslider({
+
+//Flex it
+    $('.class-name').flexslider({
     animation: "slide",
     controlNav: false, 
     animationLoop: false,
@@ -19,21 +20,58 @@ $(window).load(function() {
     	}
   	}    
   });
-});
 
 //Scroll to
-$(document).ready(function() {
     var newHeight = $("html").height();
     $(".button-class").click(function(event){
         $('html, body').animate({scrollTop: newHeight}, {duration: 1000, easing: 'easeOutQuint'});
     });
-});
 
 //Menu btn
-$(document).ready(function(){
     $('.menu-btn').on('click',function(){
         $('.menu-btn button').toggleClass('is-active');
     })
+
+//YouTube API <div id="player"></div> Move below to header.php
+    var tag = document.createElement('script');
+    tag.src = "//www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+
+    onYouTubeIframeAPIReady = function () {
+        player = new YT.Player('player', {
+            height: '244',
+            width: '434',
+            videoId: 'Ncff9XreRRk',  // youtube video id
+            playerVars: {
+                'autoplay': 0,
+                'controls':0,
+                'showinfo':0,
+                'modestbranding':0,
+                'rel': 0,
+                'showinfo': 0
+            },
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+    onPlayerStateChange = function (event) {
+        if (event.data == YT.PlayerState.ENDED) {
+            player.playVideo();
+        }
+    }
+
+// Parallax
+	$(window).bind('scroll',function(e){
+   		parallaxScroll();
+   	});
+   	function parallaxScroll(){
+   		var scrolledY = $(window).scrollTop();
+		$('.large-window').css('background-position','center -'+((scrolledY*0.3))+'px');   	
+	}
 })
 
 //Full browser height
@@ -50,47 +88,31 @@ $(window).resize(function () {
     $(".bio-window").css("height", newHeight);
 });	
 
-//Parallax
-$(document).ready(function(){
-	$(window).bind('scroll',function(e){
-   		parallaxScroll();
-   	});
-   	function parallaxScroll(){
-   		var scrolledY = $(window).scrollTop();
-		$('.large-window').css('background-position','center -'+((scrolledY*0.3))+'px');   	
-	}
-});
-
 //Parallax Content
 $.fn.moveIt = function(){
     var $window = $(window);
     var instances = [];
     
     $(this).each(function(){
-      instances.push(new moveItItem($(this)));
+        instances.push(new moveItItem($(this)));
     });
     
     window.onscroll = function(){
-      var scrollTop = $window.scrollTop();
-      instances.forEach(function(inst){
-        inst.update(scrollTop);
-      });
+        var scrollTop = $window.scrollTop();
+        instances.forEach(function(inst){
+            inst.update(scrollTop);
+        });
     }
-  }
-  
-  var moveItItem = function(el){
-    this.el = $(el);
-    this.speed = parseInt(this.el.attr('data-scroll-speed'));
-  };
-  
-  moveItItem.prototype.update = function(scrollTop){
-    this.el.css('transform', 'translateY(' + -(scrollTop / this.speed) + 'px)');
-  };
-  
-  // ---- Initialization
-  $(function(){
-    $('[data-scroll-speed]').moveIt();
-  });
+}
+class moveItItem {
+    constructor(el) {
+        this.el = $(el);
+        this.speed = parseInt(this.el.attr('data-scroll-speed'));
+    }
+    update(scrollTop) {
+        this.el.css('transform', 'translateY(' + -(scrollTop / this.speed) + 'px)');
+    }
+}
 
 //Page switch delay
 $(document).ready(function(){
