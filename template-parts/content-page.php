@@ -1,8 +1,12 @@
-<div class="flex-row flex-wrap padded">
-	<div class="flex flex-1">
-		<h2><?php the_title();?></h2>
+<?php while(have_posts()):the_post();?>
+	<div class="flex-row flex-wrap wide padded">
+		<div class="flex flex-1">
+			<h2><?php the_title();?></h2>
+		</div>
+		<div class="flex flex-2-3">
+			<article class="body-content">
+				<?php the_content();?>	
+			</article>
+		</div>
 	</div>
-	<div class="flex flex-1">
-		<?php the_content();?>	
-	</div>
-</div>
+<?php endwhile;?>

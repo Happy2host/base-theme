@@ -1,0 +1,31 @@
+.interior-template {
+    .body-content {
+        color:$grey__darker;
+        margin:120px auto;
+        text-align: center;
+        .alignleft {
+            text-align: left;
+        }
+        .alignright {
+            text-align: right;
+        }
+        .aligncenter {
+            text-align: center;
+        }
+        p {
+            font-size:16px;
+            line-height:24px;
+            margin-bottom: 15px;
+            a {
+                color: $grey;
+            }
+        }
+        blockquote {
+            border-left:8px solid $grey;
+            display: block;
+            margin: 0 0 $body-padding;
+            padding:0 0 0 $body-padding;
+            text-align: left;
+        }
+    }
+}
