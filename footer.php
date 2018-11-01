@@ -1,5 +1,5 @@
 		</main>
-		<footer>
+		<footer role="contentinfo">
 			<section>
 				<div class="flex-row flex-wrap padded">
 					<div class="flex flex-1-2 copy">

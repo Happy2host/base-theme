@@ -30,7 +30,7 @@
 
 <body <?php body_class(); ?>>
 
-	<header>	
+	<header role="banner">	
 		<section>
 			<div class="flex-row flex-wrap padded">
 				<div class="flex flex-1">
@@ -45,7 +45,7 @@
 						  </span>
 						</button>
 					</div>	
-					<nav>
+					<nav role="navigation">
 						<?php wp_nav_menu( array( 
 							'theme_location' => 'main-menu',
 							'before' => '',
