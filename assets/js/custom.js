@@ -71,7 +71,11 @@ $(window).load(function() {
    	function parallaxScroll(){
    		var scrolledY = $(window).scrollTop();
 		$('.large-window').css('background-position','center -'+((scrolledY*0.3))+'px');   	
-	}
+    }
+    
+//Iframe wrapper
+    $('iframe').wrap('<div class="video-wrapper" />');
+   
 })
 
 //Full browser height
@@ -131,6 +135,7 @@ $(document).ready(function(){
 		return false;
 	});                            
 });
+
 
 /* Add to Footer after body tag
 <script>

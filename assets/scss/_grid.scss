@@ -1,13 +1,12 @@
 main { 
 	width:100%;
-}
-  
+}  
 section { 
 	margin: 0 auto;
 	text-align: left;
 	width: 100%;
 }
-  
+
 .flex-row,
 .flex-col{
 	align-items:flex-start;
@@ -16,6 +15,7 @@ section {
 	margin: 0 auto;
 	max-width:$main-width;
 	position: relative;
+	width:100%;
 	&.padded {
 		padding-left:$body-padding;
 	}
@@ -29,11 +29,6 @@ section {
 	&.fullheight {
 		height:100vh;
 	}	
-	&.max-width {
-		max-width: $main-width;
-		margin: 0 auto;
-		width:100%;
-	}
 	.flex { 
 		flex:1;
 		position:relative;
@@ -41,8 +36,7 @@ section {
 			display: flex;
 			flex-direction:row;
 			margin:0 auto;
-			max-width:1180px;
-			padding-right:0 !important;
+			max-width: $main-width;
 		}
 		&.nogrow {
 			flex-grow:0;
@@ -76,39 +70,42 @@ section {
 	}	
 }
   
-  .flex-wrap{
-	  flex-wrap:wrap;
-  }
-  .flex-nowrap{
-	  flex-wrap:nowrap;
-  }
-  .justify-flex-start {
-	  justify-content:flex-start;
-  }
-  .justify-center {
-	  justify-content: center;
-  }
-  .justify-space-around {
-	  justify-content: space-around;
-  }
-  .justify-space-between {
-	  justify-content: space-between;
-  }
+.flex-wrap{
+	flex-wrap:wrap;
+}
+.flex-nowrap{
+	flex-wrap:nowrap;
+}
+.justify-flex-start {
+	justify-content:flex-start;
+}
+.justify-center {
+	justify-content: center;
+}
+.justify-space-around {
+	justify-content: space-around;
+}
+.justify-space-between {
+	justify-content: space-between;
+}
   
-  .flex-col {
-	  flex-direction: column;
-  }
-  .flex {
-	  .flex-row.padded &  {
-		  padding-right:$body-padding;
-	  }	
-	  .flex-row.nopadding & {
-		padding-right:0;
-	  }
-	  .flex-row.fullheight & {
-		  height:100vh;
-	  }	
-  }
+.flex-col {
+	flex-direction: column;
+}
+.flex {
+	.flex-row.padded &  {
+		padding-right:$body-padding;
+		&.max-width {
+		padding-right:$body-padding;
+		}
+	}	
+	.flex-row.nopadding & {
+	padding-right:0;
+	}
+	.flex-row.fullheight & {
+		height:100vh;
+	}	
+}
   
   //BREAKPOINTS
   .flex-row,

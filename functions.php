@@ -137,7 +137,10 @@ if ( function_exists('register_sidebar') )
 add_filter( 'woocommerce_product_variation_title_include_attributes', '__return_false' );
 add_filter( 'woocommerce_is_attribute_in_product_name', '__return_false' );
 
+//Placeholder
+$ph = 'http://1x1px.me/000000-0';
 
+//Global Scripts
 if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
 function my_jquery_enqueue() {
    wp_deregister_script('jquery');
