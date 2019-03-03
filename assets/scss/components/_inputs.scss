@@ -1,24 +1,93 @@
 input[type=checkbox] {
-    appearance:none;
-    -webkit-appearance:none;
+    @include appearance-none;
     background:#fff;
+    border: 1px solid $grey;
     height:30px;
     flex:1;
     flex-basis:30px;
     flex-grow:0;
-    margin-right:$body-padding;
+    margin: 0 $body-padding 0 0;
     position:relative;
     top:-3px;
-    width:30px;
+    width: 30px;
     &:checked {
         &:before {
-            color:$grey__darker;
+            color:#333;
             content:'\E876';
             font-family: $icon-font-mi;
-            font-size:18px;
-            left:5px;
-            position:absolute;
-            top:6px;
+            font-size: 20px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+        }
+    }
+}
+
+.wpcf7-form {
+    margin: $body-padding * 2 auto 0;
+    max-width: 400px;
+    width: 100%;
+    label {
+        color: $grey;
+        font-size: 14px;
+        .wpcf7-form-control-wrap {
+            display: block;
+            input[type=text],
+            input[type=number],
+            input[type=email],
+            textarea{
+                @include appearance-none;
+                border:1px solid $grey;
+                border-radius: 4px;
+                font-family:$default-font;
+                font-size: 16px;
+                margin-top: 5px;
+                padding: 10px 8px;
+                width: 100%;
+                &.wpcf7-not-valid {
+                    border-color: #f00;
+                }
+            }
+            textarea {
+                resize: none;
+            }
+            .wpcf7-checkbox {
+                .wpcf7-list-item {
+                    margin-left:0;
+                }
+            }
+            .wpcf7-not-valid-tip {
+                display: none;
+            }
+        }
+    }
+    input[type=submit]{
+        @include appearance-none;
+        border:0;
+        color: $purple;
+        cursor: pointer;
+        font-family:$secondaryfont;
+        font-size: 16px;
+        font-weight:700;
+        margin-top:20px;
+        padding:0;
+    }
+    //Error message
+    .wpcf7-response-output {
+        background: #f00;
+        border:0;
+        color:#fff;
+        margin: 40px 0;
+        padding: 10px 10px 10px 50px;
+        position: relative;
+        &:before {
+            color:#fff;
+            content:'\E001';
+            font-family:$icon-font-mi;
+            font-size: 24px;
+            position: absolute;
+            left: 10px;
+            top:10px;
         }
     }
 }
