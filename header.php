@@ -21,7 +21,6 @@
 	<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 <!--<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />-->
 
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/stylesheets/styles.min.css" type="text/css" media="screen" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,900' rel='stylesheet' type='text/css'>
 

@@ -1,4 +1,21 @@
-/*This is called in base*/
+/*INDEX
+
+@mixin appearance-none
+@mixin hide-me
+@mixin show-me
+@mixin blurrit($blur)
+@mixin transition($attr)
+@mixin border-radius($maount)
+@mixin border-TL, border-TR, border-BL, border-BR
+@mixin greyscale($amount)
+@mixin gradient-TB
+@mixin gradient-BT
+@mixin gradient-angle
+@mixin placeholder($color)
+@mixin rotate($amount)
+
+*/
+
 @mixin appearance-none {
 	appearance:none;
 	-webkit-appearance:none;
@@ -24,11 +41,6 @@
 	flex: $flex;
 }
 
-
-@mixin appearance-none {
-	appearance: none;
-	-webkit-appearance: none;
-}
 
 @mixin hide-me {
 	opacity: 0;
@@ -102,6 +114,29 @@
          -o-filter: grayscale($amount);
         -ms-filter: grayscale($amount);
             filter: grayscale($amount); 
+}
+
+@mixin gradient-TB($color1, $color2){
+	background: $color1;
+	background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
+	background: -webkit-linear-gradient(top, $color1 0%,$color2 100%);
+	background: linear-gradient(to bottom, $color1 0%,$color2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2,GradientType=0 );
+}
+@mixin gradient-BT($color1, $color2){
+	background: $color1;
+	background: -moz-linear-gradient(bottom, $color1 0%, $color2 100%);
+	background: -webkit-linear-gradient(bottom, $color1 0%,$color2 100%);
+	background: linear-gradient(to top, $color1 0%,$color2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2,GradientType=0 );
+}
+@mixin gradient-angle ($color1, $color2, $angle){
+	background: $color1;
+	background: -moz-linear-gradient($angle, $color1 0%,  $color2 100%);
+	background: -webkit-linear-gradient($angle, $color1 0%, $color2 100%);
+	background: linear-gradient(45deg, $color1 0%, $color2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr= $color2,GradientType=1 );
+	
 }
 
 @mixin placeholder($color){

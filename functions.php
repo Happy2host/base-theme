@@ -162,5 +162,14 @@ function wp_load_scripts()
   wp_enqueue_script('custom', get_template_directory_uri().'/assets/js/custom.js', array('jquery'), '1.0', true);
 
 }
+
+// enqueue styles
+function theme_styles() {
+	$themePath = get_template_directory_uri();
+	$themeCSSPath = $themePath . '/stylesheets/';
+	wp_enqueue_style('styles', CSS_PATH . 'styles.min.css');
+}
+
 add_action('wp_enqueue_scripts', 'wp_load_scripts');
+add_action( 'wp_enqueue_scripts', 'theme_styles' );
 ?>

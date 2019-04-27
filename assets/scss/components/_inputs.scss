@@ -64,9 +64,9 @@ input[type=checkbox] {
     input[type=submit]{
         @include appearance-none;
         border:0;
-        color: $purple;
+        color: #fff;
         cursor: pointer;
-        font-family:$secondaryfont;
+        font-family:$default-font;
         font-size: 16px;
         font-weight:700;
         margin-top:20px;
