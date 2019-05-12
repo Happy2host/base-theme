@@ -160,6 +160,7 @@ function wp_load_scripts()
   wp_enqueue_script('waypoints', get_template_directory_uri().'/assets/js/waypoints.min.js', array('jquery'), '1.0', true);
   wp_enqueue_script('fontawesome', get_template_directory_uri().'/assets/js/fontawesome-all.js', array('jquery'), '1.0', true);
   wp_enqueue_script('custom', get_template_directory_uri().'/assets/js/custom.js', array('jquery'), '1.0', true);
+  wp_enqueue_script('ease', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js', array('jquery'), '1.0', true);
 
 }
 
