@@ -168,7 +168,7 @@ function wp_load_scripts()
 function theme_styles() {
 	$themePath = get_template_directory_uri();
 	$themeCSSPath = $themePath . '/stylesheets/';
-	wp_enqueue_style('styles', CSS_PATH . 'styles.min.css');
+	wp_enqueue_style('styles', $themeCSSPath . 'styles.min.css');
 }
 
 add_action('wp_enqueue_scripts', 'wp_load_scripts');
