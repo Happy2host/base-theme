@@ -1,5 +1,5 @@
 main { 
-	width:100%;
+	width: 100%;
 }  
 section { 
 	margin: 0 auto;
@@ -9,63 +9,78 @@ section {
 
 .flex-row,
 .flex-col{
-	align-items:flex-start;
-	display:flex;
+	align-items: flex-start;
+	display: flex;
 	flex-direction: row;
 	margin: 0 auto;
 	max-width:$main-width;
 	position: relative;
 	width:100%;
 	&.padded {
-		padding-left:$body-padding;
+		padding-left: $body-padding;
+		.flex {
+			padding-right: $body-padding;
+		}
 	}
 	&.inline {
-		display:inline-flex;
+		display: inline-flex;
 	}
 	&.wide{
 		max-width: none;
-		width:100%;
+		width: 100%;
 	}
 	&.fullheight {
-		height:100vh;
+		height: 100vh;
 	}	
+	&.nopadding {
+		padding: 0;
+		.flex {
+			padding: 0;
+		}
+	}
 	.flex { 
-		flex:1;
-		position:relative;
+		flex: 1;
+		position: relative;
 		&.max-width{
 			display: flex;
-			flex-direction:row;
+			flex-direction: row;
 			margin:0 auto;
 			max-width: $main-width;
 		}
 		&.nogrow {
-			flex-grow:0;
+			flex-grow: 0;
 		}
 		&.shrink {
-			flex-shrink:1;
+			flex-shrink: 1;
 		}
 		&.noshrink {
-			flex-shrink:0;
+			flex-shrink: 0;
 		}	
 
 		//RESPONSIVE ELEMENTS
 		&.flex-1{
-			flex-basis:100%;
+			flex-basis: 100%;
+			width: 100%;
 		}
 		&.flex-1-2{
-			flex-basis:50%;
+			flex-basis: 50%;
+			width: 50%;
 		}
 		&.flex-1-3{
-			flex-basis:33.3%;
+			flex-basis: 33.3%;
+			width: 33.3%;
 		}
 		&.flex-1-4{
-			flex-basis:25%
+			flex-basis: 25%;
+			width: 25%;
 		}
 		&.flex-2-3{
-			flex-basis:66.6%;
+			flex-basis: 66.6%;
+			width: 66.6%;
 		}		
 		&.flex-3-4{
-			flex-basis:75%;
+			flex-basis: 75%;
+			width: 75%;
 		} 
 	}	
 }
@@ -113,24 +128,30 @@ section {
 	  .flex {
 		  @media screen and (max-width:768px){
 			  &.\@tab__brk-1-2 {
-				  flex-basis:50%;
+				  flex-basis: 50%;
+				  width: 50%;
 			  }
 			  &.\@tab__brk-1-3 {
-				  flex-basis:33.3%;
+				  flex-basis: 33.3%;
+				  width: 33.3%;
 			  }	
 			  &.\@tab__brk-1{
-				  flex-basis:100%;
+				  flex-basis: 100%;
+				  width: 100%;
 			  }
 		  }	
 		  @media screen and (max-width:450px){
 			  &.\@mob__brk-1-2 {
-				  flex-basis:50%
+				  flex-basis: 50%;
+				  width: 50%;
 			  }
 			  &.\@mob__brk-1-3 {
-				  flex-basis:33.3%
+				  flex-basis: 33.3%;
+				  width: 33.3%;
 			  }
 			  &.\@mob__brk-1 {
 				  flex-basis:100%;
+				  width: 100%;
 			  } 
 		  } 
 	  }
