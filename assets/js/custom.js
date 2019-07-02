@@ -74,7 +74,7 @@ $(window).load(function() {
     }
     
 //Iframe wrapper
-    $('iframe').wrap('<div class="video-wrapper" />');
+    $('iframe').wrap('<div class="iframe--responsive" />');
    
 })
 
