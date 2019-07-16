@@ -1,12 +1,14 @@
-@import "base";
-@import "fonts";
+@import "defaults/base";
+@import "defaults/fonts";
+@import "defaults/theme";
+@import "defaults/common";
 
 /*Layout*/
-@import "grid";
+@import "defaults/grid";
 
 /*Components*/
-@import "components/common";
 @import "components/header";
+@import "components/nav";
 @import "components/footer";
 @import "components/inputs";
 @import "components/lightbox";
